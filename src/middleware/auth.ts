@@ -6,7 +6,6 @@ interface AuthenticatedRequest extends Request {
 }
 
 const authenticate = (roles: string[] = []) => {
-    // console.log("bhai");
   return (req: AuthenticatedRequest, res: Response, next: NextFunction): void => {
     const token = req.headers.authorization?.split(" ")[1];
     if (!token) {
